@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<file id="stream" version="2.0">
+
+  <stream_info name="CLMGSWP3v1.Solar">
+   <taxmode>limit</taxmode>
+   <tintalgo>coszen</tintalgo>
+   <readmode>single</readmode>
+   <mapalgo>bilinear</mapalgo>
+   <dtlimit>1.5</dtlimit>
+   <year_first>1999</year_first>
+   <year_last>2000</year_last>
+   <year_align>1999</year_align>
+   <vectors>null</vectors>
+   <meshfile>INPUT/clmforc.GSWP3.c2011.0.5x0.5.TPQWL.SCRIP.210520_ESMFmesh.nc</meshfile>
+   <lev_dimname>null</lev_dimname>
+   <datafiles>
+      <file>INPUT/clmforc.GSWP3.c2011.0.5x0.5.Solr.1999-12.nc</file>
+      <file>INPUT/clmforc.GSWP3.c2011.0.5x0.5.Solr.2000-01.nc</file>
+   </datafiles>
+   <datavars>
+      <var>FSDS Faxa_swdn</var>
+   </datavars>
+   <offset>0</offset>
+  </stream_info>
+
+  <stream_info name="CLMGSWP3v1.Precip">
+   <taxmode>limit</taxmode>
+   <tintalgo>nearest</tintalgo>
+   <readmode>single</readmode>
+   <mapalgo>bilinear</mapalgo>
+   <dtlimit>1.5</dtlimit>
+   <year_first>1999</year_first>
+   <year_last>2000</year_last>
+   <year_align>1999</year_align>
+   <vectors>null</vectors>
+   <meshfile>INPUT/clmforc.GSWP3.c2011.0.5x0.5.TPQWL.SCRIP.210520_ESMFmesh.nc</meshfile>
+   <lev_dimname>null</lev_dimname>
+   <datafiles>
+      <file>INPUT/clmforc.GSWP3.c2011.0.5x0.5.Prec.1999-12.nc</file>
+      <file>INPUT/clmforc.GSWP3.c2011.0.5x0.5.Prec.2000-01.nc</file>
+   </datafiles>
+   <datavars>
+      <var>PRECTmms Faxa_precn</var>
+   </datavars>
+   <offset>0</offset>
+  </stream_info>
+
+  <stream_info name="CLMGSWP3v1.TPQW">
+   <taxmode>limit</taxmode>
+   <tintalgo>linear</tintalgo>
+   <readmode>single</readmode>
+   <mapalgo>bilinear</mapalgo>
+   <dtlimit>1.5</dtlimit>
+   <year_first>1999</year_first>
+   <year_last>2000</year_last>
+   <year_align>1999</year_align>
+   <vectors>null</vectors>
+   <meshfile>INPUT/clmforc.GSWP3.c2011.0.5x0.5.TPQWL.SCRIP.210520_ESMFmesh.nc</meshfile>
+   <lev_dimname>null</lev_dimname>
+   <datafiles>
+      <file>INPUT/clmforc.GSWP3.c2011.0.5x0.5.TPQWL.1999-12.nc</file>
+      <file>INPUT/clmforc.GSWP3.c2011.0.5x0.5.TPQWL.2000-01.nc</file>
+   </datafiles>
+   <datavars>
+      <var>TBOT Sa_tbot</var>
+      <var>WIND Sa_wind</var>
+      <var>QBOT Sa_shum</var>
+      <var>PSRF Sa_pbot</var>
+      <var>FLDS Faxa_lwdn</var>
+   </datavars>
+   <offset>0</offset>
+  </stream_info>
+
+  <stream_info name="topo.observed">
+   <taxmode>cycle</taxmode>
+   <tintalgo>lower</tintalgo>
+   <readmode>single</readmode>
+   <mapalgo>bilinear</mapalgo>
+   <dtlimit>1.5</dtlimit>
+   <year_first>1</year_first>
+   <year_last>1</year_last>
+   <year_align>1</year_align>
+   <vectors>null</vectors>
+   <meshfile>INPUT/topodata_0.9x1.SCRIP.210520_ESMFmesh.nc</meshfile>
+   <lev_dimname>null</lev_dimname>
+   <datafiles>
+      <file>INPUT/topodata_0.9x1.25_USGS_070110_stream_c151201.nc</file>
+   </datafiles>
+   <datavars>
+      <var>TOPO Sa_topo</var>
+   </datavars>
+   <offset>0</offset>
+  </stream_info>
+
+</file>

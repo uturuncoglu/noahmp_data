@@ -1,0 +1,75 @@
+component_list: ATM LND
+
+ATM_petlist: 0-5
+ATM_attributes::
+  Verbosity = 0
+  Diagnostic = 0
+::
+
+LND_petlist: 0-5
+LND_attributes::
+  Verbosity = 1
+  Diagnostic = 0
+  mosaic_file = INPUT/C96_mosaic.nc
+  input_dir = INPUT/
+  ic_type = 'custom'
+  num_soil_levels = 4
+  forcing_height = 10
+  soil_level_thickness = 0.10:0.30:0.60:1.00
+  soil_level_nodes = 0.05:0.25:0.70:1.50
+  dynamic_vegetation_option = 4
+  canopy_stomatal_resistance_option = 2
+  soil_wetness_option = 1
+  runoff_option = 1
+  surface_exchange_option = 3
+  supercooled_soilwater_option = 1
+  frozen_soil_adjust_option = 1
+  radiative_transfer_option = 3
+  snow_albedo_option = 1
+  precip_partition_option = 4
+  soil_temp_lower_bdy_option = 2
+  soil_temp_time_scheme_option = 3
+  surface_evap_resistance_option = 1 # not used, it is fixed to 4 in sfc_noahmp_drv.F90 
+  glacier_option = 1
+  surface_thermal_roughness_option = 2
+  output_freq = 1
+  has_export = false
+::
+
+runSeq::
+  @3600
+    LND -> ATM :remapMethod=bilinear:unmappedaction=ignore:zeroregion=select #:srcmaskvalues=0
+    ATM -> LND :remapMethod=bilinear:unmappedaction=ignore:zeroregion=select #:srcmaskvalues=1:dstmaskvalues=0
+    ATM
+    LND
+  @
+::
+
+ALLCOMP_attributes::
+  case_name = comp.test 
+  read_restart = .false.
+  # following are all cdeps specific options
+  orb_eccen = 1.e36
+  orb_iyear = 2000
+  orb_iyear_align = 2000
+  orb_mode = fixed_year
+  orb_mvelp = 1.e36
+  orb_obliq = 1.e36
+  ScalarFieldCount = 3
+  ScalarFieldIdxGridNX = 1
+  ScalarFieldIdxGridNY = 2
+  ScalarFieldIdxNextSwCday = 3
+  ScalarFieldName = cpl_scalars
+  stop_n = 1
+  stop_option = ndays
+  stop_tod = 0
+  stop_ymd = -999
+  restart_n = 1
+  restart_option = never
+  restart_ymd = -999
+::
+
+CLOCK_attributes::
+  start_tod = 0
+  start_ymd = 20000101
+::
